@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_light"
     android:orientation="vertical"
     tools:context="com.cal.calculatori.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_height="match_parent"
+        android:layout_weight="4">
 
         <!-- Add your screen layout here -->
 
@@ -23,6 +22,7 @@
             android:text="60+18"
             android:textColor="@color/black"
             android:textSize="28sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.95"
@@ -35,6 +35,7 @@
             android:layout_marginBottom="24dp"
             android:text="=78"
             android:textSize="34sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.92"
@@ -43,33 +44,36 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_weight="2">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="fitEnd"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            app:layout_constraintEnd_toStartOf="@+id/gridLayout"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/wave_light_mode" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/wave_light_mode"
+
+            />
 
         <GridLayout
+            android:id="@+id/gridLayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="60dp"
-            android:layout_weight="4"
+            android:layout_height="match_parent"
+            android:layout_marginTop="140dp"
             android:alignmentMode="alignBounds"
             android:backgroundTint="@color/action_button_number_set_light"
             android:columnCount="4"
-            android:padding="7dp"
             android:rowCount="5"
             android:useDefaultMargins="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView">
+            app:layout_constraintTop_toTopOf="parent">
 
             <Button
                 android:id="@+id/button1"
@@ -83,7 +87,7 @@
                 android:backgroundTint="@color/action_button_set_2_light"
                 android:text="AC"
                 android:textColor="@android:color/black"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:cornerRadius="25dp" />
 
@@ -100,7 +104,7 @@
                 android:backgroundTint="@color/action_button_set_2_light"
                 android:text="+/-"
                 android:textColor="@android:color/black"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:cornerRadius="25dp" />
 
